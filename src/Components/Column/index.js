@@ -1,31 +1,15 @@
 import React from 'react';
-import ColumnHeader from '../ColumnHeader';
-import BtnAdd from '../BtnAdd';
 import Card from '../Card';
+import ColumnHeader from '../ColumnHeader';
 
-import { ColumnWrapper, Wrapper, BtnWrapper } from './styled';
+import { ColumnWrapper, Wrapper } from './styled';
 
 const Column = props => {
-
-  let arr = [];
-
-  for (let i = 0; i < props.numCard; i++) {
-    arr = arr.concat(<Card />);
-  };
-
   return (
-    <ColumnWrapper>
+    <ColumnWrapper id={props.id}>
       <ColumnHeader title={props.columnTitle} />
       <Wrapper numCard={props.numCard}>
-        {arr.map((i, index) => {
-          return <Card
-            conteudo="Quos nostrum adipisci mollitia deserunt esse reprehendarit facere."
-            tag="Desenvolvimento"
-            key={index} />;
-        })}
-        <BtnWrapper>
-          <BtnAdd name="Task" />
-        </BtnWrapper>
+        {props.children}
       </Wrapper>
     </ColumnWrapper>
   )

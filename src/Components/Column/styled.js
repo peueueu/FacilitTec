@@ -14,6 +14,9 @@ height: calc(100vh - 250px);
 background: ${colorTheme.bg};
 padding: 12px 11px;
 overflow-y: scroll;
+button {
+  height: auto;
+}
 `
 
 export const BtnWrapper = styled.div`
